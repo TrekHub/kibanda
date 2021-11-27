@@ -5,6 +5,10 @@
   padding: 0;
   font-family: "Nunito", sans-serif !important;
 }
+
+body {
+    scroll-behavior: smooth;
+}
 #logo {
   color: #5eb172;
   font-family: "Dancing Script", cursive !important;
