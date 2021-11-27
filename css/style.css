@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@200;600&display=swap");
 
-
 body {
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    font-family: "Nunito", sans-serif ;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 #logo {
   color: #5eb172;
@@ -60,11 +59,11 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
-    #row {
-      width: 100%;
-      justify-content: center;
-    }
+  #row {
+    width: 100%;
+    justify-content: center;
   }
+}
 .card-container {
   display: flex;
   margin-top: 50px;
@@ -100,6 +99,15 @@ body {
   justify-content: flex-start;
   padding-top: 0px;
 }
+#price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#price img {
+  fill: #5eb172;
+}
 .card-title {
   font-size: 22px;
   padding-left: 5px;
@@ -118,103 +126,96 @@ body {
   margin-left: 30px;
 }
 
-
 #menu-section {
-    background-color: rgba(228, 237, 221, 0.62) ;
-    border-radius: 20px;
+  background-color: rgba(228, 237, 221, 0.62);
+  border-radius: 20px;
 }
-
-
 
 #bg-section {
-    height: 200px;
-    background-image: url("../images/bg-footer.jpg");
-    background-size: cover;
-    border-radius: 20px;
-    background-repeat:no-repeat ;
+  height: 300px;
+  background-image: url("../images/bg-footer.jpg");
+  background-size: cover;
+  border-radius: 20px;
+  background-repeat: no-repeat;
 }
-
-
 
 /* FOOTER SECTION */
 #footer-section {
-    background-color: rgba(228, 237, 221, 0.62) ;
-    border-radius: 20px;
-  }
-  
-  #footer {
-    width: 100%;
-    padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+  background-color: rgba(228, 237, 221, 0.62);
+  border-radius: 20px;
+}
+
+#footer {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.line {
+  margin: auto 0;
+  height: 150px;
+  border-right: 5px dashed #5eb172;
+}
+.footer-links {
+  list-style: none;
+  text-align: center;
+}
+.link a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+}
+.address {
+  text-align: center;
+}
+.address p {
+  font-size: 20px;
+  margin: 10px 0;
+  color: rgb(51, 51, 51);
+}
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.social-icons i {
+  font-size: 24px;
+  color: #5eb172;
+}
+.footer-logo h2 {
+  margin-top: 0;
+  font-weight: 800;
+}
+.footer-logo span {
+  color: #5eb172;
+}
+.copyright {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+.copyright p {
+  font-size: 18px;
+  color: rgb(51, 51, 51);
+  margin: 4px;
+}
+.copyright p > i {
+  color: red;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 430px) {
   .line {
-    margin: auto 0;
-    height: 150px;
-    border-right: 5px dashed #5eb172;
+    display: none;
   }
-  .footer-links {
-    list-style: none;
+  .footer {
+    align-items: center;
+    justify-content: center;
     text-align: center;
   }
-  .link a {
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(51, 51, 51);
+  .quick-links h2 {
+    margin-left: 30px;
   }
-  .address {
-    text-align: center;
-  }
-  .address p {
-    font-size: 20px;
-    margin: 10px 0;
-    color: rgb(51, 51, 51);
-  }
-  .social-icons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-around;
-  }
-  .social-icons i {
-    font-size: 24px;
-    color: #5eb172;
-  }
-  .footer-logo h2 {
-    margin-top: 0;
-    font-weight: 800;
-  }
-  .footer-logo span {
-    color: #5eb172;
-    
-  }
-  .copyright {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    margin-top: 10px;
-  }
-  .copyright p {
-    font-size: 18px;
-    color: rgb(51, 51, 51);
-    margin: 4px;
-  }
-  .copyright p > i {
-    color: red;
-    font-size: 18px;
-  }
-  
-  
-  @media only screen and (max-width: 430px) {
-    .line{
-      display: none;
-    }
-    .footer{
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .quick-links h2 {
-      margin-left: 30px;
-    }
-  }
+}
