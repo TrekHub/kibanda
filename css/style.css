@@ -1,4 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@200;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Nunito', sans-serif !important;
+}
+#logo {
+    color: #5EB172;
+    font-family: 'Dancing Script', cursive !important;
+}
+#logo-img {
+    color: #080808;
+}
+.nav-item {
+    font-weight: 600 !important;
+}
+#cart-icon {
+    margin-right: 30px ;
+}
+.btn-order {
+    width: 130px;
+    height: 40px;
+    margin-left: 10px;
+  
+    background-color: #5EB172;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+
+
+}
+.btn-order:hover {
+    background-color: transparent;
+    border: 2px #5EB172 solid;
+    color: #080808;
 }
