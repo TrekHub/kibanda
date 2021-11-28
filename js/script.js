@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     $("#btn-click").on("click", function (e) {
         e.preventDefault()
-        
+
         number = $("#number").val()
         size = $("#size").val()
         crust = $("#crust").val()
@@ -76,12 +76,19 @@ $(document).ready(function () {
             });
 
             addToCart(cart)
-            console.log(cart);
+            // console.log(cart);
+
+
 
         }
 
+        const finalTotal = cart.reduce((n, {
+            price
+        }) => n + price, 0);
+        $(".totalPrice").text(`Ksh ${finalTotal}`)
+
         // Clear Fields
-        $("#number").val('')
+
         $("#size").val('')
         $("#crust").val('')
         $("#topping").val('')
