@@ -1,6 +1,8 @@
 //   1. Business Logic
 
 
+
+
 //Constructor for Pizza
 function Pizza(id, name, size, image, price, crust, topping) {
     this.id = id;
@@ -10,7 +12,6 @@ function Pizza(id, name, size, image, price, crust, topping) {
     this.price = price;
     this.crust = 'stuffed';
     this.topping = 'topping';
-
 }
 
 
@@ -44,32 +45,63 @@ const availablePizzas = [
 ]
 
 
-
+let cart = [];
 
 
 
 
 // UI LOGIC
+$(document).ready(function () {
+
+    $("#orderForm").submit(function (e, id) {
+
+        e.preventDefault()
+        const single = availablePizzas.find((pizza) => pizza.id === id)
+
+        const number = $("#number").val()
+        const size = $("#size").val()
+        const crust = $("#crust").val()
+        const topping = $("#topping").val()
 
 
-$("body").ready(function() {
-    appendPizzasToMenu(availablePizzas)
-   
+
+
+        if(number,size,crust,topping) {
+
+        cart.push({
+            ...single,
+            number,
+            size,
+            crust,
+            topping
+
+        })
+        
+            console.log(cart);
+        }
+        $("#number").val('')
+        $("#size").val('')
+        $("#crust").val('')
+        $("#topping").val('')
+
+
+
+    })
+
 });
 
+appendPizzasToMenu(availablePizzas)
 
 function appendPizzasToMenu(availablePizzas) {
-
     const menu = $(".menu")
     menu.html("")
-
     availablePizzas.forEach((pizza) => {
         menu.append(createPizza(pizza))
 
     });
 
-}
 
+}
 
 
 
@@ -92,9 +124,9 @@ function createPizza(pizza) {
                                 <h4 class="fw-bold text-success">4.5</h4>
                             </div>
                             <div class="card-price mx-3" id="price">
-                                <h4 id="featured-price" class="fw-bold text-success">Ksh ${pizza.price}</h4>
-                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt=""
-                                    data-bs-toggle="modal" data-bs-target="#addToCartModal" data-index = "${pizza.id}">
+                                <h4 id="featured-price" class="fw-bold text-success">Ksh ${pizza.price}</h4> 
+                                <img height="20" class="iconCart" src="./images/icons/cart.svg" id="cart-icon" onClick = "pizzaOrder(${pizza.id})" data-bs-toggle="modal" data-bs-target="#addToCartModal"  alt=""
+                                  >
 
                             </div>
                         </div>
@@ -104,5 +136,14 @@ function createPizza(pizza) {
 }
 
 
-//Appending Pizzas to the menu section
 
+
+
+
+
+
+function pizzaOrder(id) {
+    const single = availablePizzas.find((pizza) => pizza.id === id)
+    // console.log(single);
+
+}
