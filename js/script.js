@@ -51,47 +51,35 @@ $(document).ready(function () {
     appendPizzasToMenu(availablePizzas)
 
 
-    $("#orderForm").submit(function (e, id) {
 
-        e.preventDefault()
-        pizzaOrder()
-        const single = availablePizzas.find((pizza) => pizza.id === id)
-        console.log(single);
-
+    $("#btn-click").on("click", function () {
         const number = $("#number").val()
         const size = $("#size").val()
         const crust = $("#crust").val()
         const topping = $("#topping").val()
 
 
-
         if (number, size, crust, topping) {
-
-            
-
             cart.push({
                 ...single,
-                name     : name,
                 number,
                 size,
                 crust,
                 topping
 
-            })
+            });
 
             addToCart(cart)
-
             console.log(cart);
+
         }
+
+        // Clear Fields
         $("#number").val('')
         $("#size").val('')
         $("#crust").val('')
         $("#topping").val('')
-
-
-
     })
-
 });
 
 
@@ -140,7 +128,7 @@ function createPizza(pizza) {
                             </div>
                             <div class="card-price mx-3" id="price">
                                 <h4 id="featured-price" class="fw-bold text-success">Ksh ${pizza.price}</h4> 
-                                <img height="20" class="iconCart" src="./images/icons/cart.svg" id="cart-icon" onClick = "pizzaOrder(${pizza.id})" data-bs-toggle="modal" data-bs-target="#addToCartModal"  alt=""
+                                <img height="20" class="iconCart" src="./images/icons/cart.svg" id="cart-icon" onClick = "getSelectedPizza(${pizza.id})" data-bs-toggle="modal" data-bs-target="#addToCartModal"  alt=""
                                   >
 
                             </div>
@@ -152,15 +140,13 @@ function createPizza(pizza) {
 
 
 // get the unique clicked pizza
-function pizzaOrder(id) {
-    const single = availablePizzas.find((pizza) => pizza.id === id)
-    
+function getSelectedPizza(id) {
+    single = availablePizzas.find((pizza) => pizza.id === id);
+
     console.log(single);
 
-    
-
-
 }
+
 
 
 function addToCart(cart) {
@@ -168,7 +154,7 @@ function addToCart(cart) {
     tableRow.html("")
     cart.forEach((x) => {
         tableRow.append(addItem(x))
-        
+
 
     })
 }
@@ -183,7 +169,7 @@ function addItem(x) {
     <td>${x.size}</td>
     <td>${x.crust}</td>
     <td>${x.topping}</td>
-    <td>Ksh 2000</td>
+    <td>Ksh ${x.price}</td>
 </tr>
     `
 }
