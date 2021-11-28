@@ -1,8 +1,6 @@
 //   1. Business Logic
 
 
-
-
 //Constructor for Pizza
 function Pizza(id, name, size, image, price, crust, topping) {
     this.id = id;
@@ -10,8 +8,8 @@ function Pizza(id, name, size, image, price, crust, topping) {
     this.size = size;
     this.image = image
     this.price = price;
-    this.crust = 'stuffed';
-    this.topping = 'topping';
+    this.crust = crust;
+    this.topping = topping;
 }
 
 
@@ -36,7 +34,6 @@ Pizza.prototype.pizzaPrice = function () {
 }
 
 
-
 //Creating the pizza Objects
 const availablePizzas = [
     new Pizza(1, "Pepperoni", 'large', './images/pizza.png', 1100),
@@ -45,18 +42,21 @@ const availablePizzas = [
 ]
 
 
+
 let cart = [];
-
-
 
 
 // UI LOGIC
 $(document).ready(function () {
+    appendPizzasToMenu(availablePizzas)
+
 
     $("#orderForm").submit(function (e, id) {
 
         e.preventDefault()
+        pizzaOrder()
         const single = availablePizzas.find((pizza) => pizza.id === id)
+        console.log(single);
 
         const number = $("#number").val()
         const size = $("#size").val()
@@ -65,18 +65,22 @@ $(document).ready(function () {
 
 
 
+        if (number, size, crust, topping) {
 
-        if(number,size,crust,topping) {
+            
 
-        cart.push({
-            ...single,
-            number,
-            size,
-            crust,
-            topping
+            cart.push({
+                ...single,
+                name     : name,
+                number,
+                size,
+                crust,
+                topping
 
-        })
-        
+            })
+
+            addToCart(cart)
+
             console.log(cart);
         }
         $("#number").val('')
@@ -90,8 +94,18 @@ $(document).ready(function () {
 
 });
 
-appendPizzasToMenu(availablePizzas)
 
+
+
+
+
+
+
+
+
+
+
+//Append pizzas to the menu section
 function appendPizzasToMenu(availablePizzas) {
     const menu = $(".menu")
     menu.html("")
@@ -102,6 +116,7 @@ function appendPizzasToMenu(availablePizzas) {
 
 
 }
+
 
 
 
@@ -136,14 +151,39 @@ function createPizza(pizza) {
 }
 
 
-
-
-
-
-
-
+// get the unique clicked pizza
 function pizzaOrder(id) {
     const single = availablePizzas.find((pizza) => pizza.id === id)
-    // console.log(single);
+    
+    console.log(single);
 
+    
+
+
+}
+
+
+function addToCart(cart) {
+    const tableRow = $("#table-row");
+    tableRow.html("")
+    cart.forEach((x) => {
+        tableRow.append(addItem(x))
+        
+
+    })
+}
+
+
+function addItem(x) {
+    return `
+    <tr>
+    <th scope="row">1</th>
+    <td>${x.name}</td>
+    <td>${x.number}</td>
+    <td>${x.size}</td>
+    <td>${x.crust}</td>
+    <td>${x.topping}</td>
+    <td>Ksh 2000</td>
+</tr>
+    `
 }

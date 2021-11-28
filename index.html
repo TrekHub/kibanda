@@ -319,7 +319,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="btn btn-success fw-bold">Add To Cart</button>
+                            <button type="submit" onClick = "pizzaOrder(id)" class="btn btn-success fw-bold">Add To Cart</button>
                            </form>
                         </div>
 
@@ -364,16 +364,8 @@
 
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Pepperoni</td>
-                                <td>2</td>
-                                <td>Large</td>
-                                <td>Gluten Free</td>
-                                <td>Topping 1</td>
-                                <td>Ksh 2000</td>
-                            </tr>
+                        <tbody id="table-row">
+                           
 
                         </tbody>
                     </table>
