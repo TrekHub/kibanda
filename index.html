@@ -44,7 +44,8 @@
                         </li>
                     </ul>
                     <form class="d-flex align-items-center">
-                        <img height="20" src="./images/icons/cart-shopping-solid.svg" id="cart-icon" alt="" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <img height="20" src="./images/icons/cart-shopping-solid.svg" id="cart-icon" alt=""
+                            data-bs-toggle="modal" data-bs-target="#cartModal">
                         <button class="btn-order " type="submit">Order</button>
                     </form>
                 </div>
@@ -354,7 +355,8 @@
                         <div class="col-4">
 
                             <img src="./images/pizza.png" height="200" width="240" alt="" />
-                            <h2 id="logo" class="text-center"><span> <img height="30" src="./images/icons/shop-solid.svg" alt="">
+                            <h2 id="logo" class="text-center"><span> <img height="30"
+                                        src="./images/icons/shop-solid.svg" alt="">
                                 </span>Kibanda
                             </h2>
 
@@ -364,8 +366,9 @@
 
                             <div class="mx-3">
                                 <label for="exampleFormControlInput1" class="form-label fw-bold">Number</label>
-                                <input type="text" class="form-control w-25" id="exampleFormControlInput1" placeholder="">
-                              </div>
+                                <input type="text" class="form-control w-25" id="exampleFormControlInput1"
+                                    placeholder="">
+                            </div>
                             <div class="mx-3">
                                 <label for="exampleFormControlInput1" class="form-label fw-bold">Size</label>
                                 <select class="form-select" aria-label="Default select example">
@@ -410,25 +413,60 @@
 
     <!-- CART MODAL -->
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex align-items-center ">
+                        <img height="20" class="mx-1" id="logo-img" src="./images/icons/shop-solid.svg" alt="">
+                        <a class="navbar-brand fs-2 fw-bold" id="logo" href="#">Kibanda</a>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table  table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Crust</th>
+                                <th scope="col">Topping</th>
+                                <th scope="col">Price</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Pepperoni</td>
+                                <td>2</td>
+                                <td>Large</td>
+                                <td>Gluten Free</td>
+                                <td>Topping 1</td>
+                                <td>Ksh 2000</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <div class="float">
+
+                    </div>
+
+
+                    
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-success fw-bold">CheckOut</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
