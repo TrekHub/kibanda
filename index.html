@@ -47,7 +47,7 @@
                         <div class="counter">
                             <img height="20" src="./images/icons/cart-shopping-solid.svg" id="cart-icon" alt=""
                                 data-bs-toggle="modal" data-bs-target="#cartModal">
-                                <div id="count">0</div>
+                            <div id="count">0</div>
 
                         </div>
 
@@ -377,20 +377,37 @@
                     </table>
 
 
-                    <div class="float-end">
-                        <label for="exampleFormControlInput1" class="form-label  mx-3 fw-bold">Delivery</label>
+                    <div class="float-end w-50">
+                        <label for="exampleFormControlInput1" class="form-label  ">Delivery</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input mx-4" type="checkbox" id="deliveryYes" value="option1">
                             <label class="form-check-label" for="inlineCheckbox1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">No</label>
-                        </div>
+
+
+
+                        <form class="delivery">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="location">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+                            <button type="button" id="btn-delivery" class="btn btn-success fw-bold">Done</button>
+
+                        </form>
+
 
                         <div class="d-flex my-3">
                             <h4 id="featured-price" class="fw-bold fs-6 mx-3  ">Total Price</h4>
-                            <h4 id="featured-price" class="fw-bold fs-6 text-success totalPrice">Ksh 2000</h4>
+                            <h4 id="featured-price" class="fw-bold fs-6 text-success totalPrice">Ksh 0</h4>
                         </div>
 
                     </div>
@@ -400,7 +417,7 @@
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-success fw-bold">CheckOut</button>
+                    <button type="button" class="btn btn-success fw-bold" id="btn-checkout">CheckOut</button>
                 </div>
             </div>
         </div>

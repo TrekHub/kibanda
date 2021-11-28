@@ -236,3 +236,6 @@ body {
   color: white;
   background-color: #5eb172;
 }
+.delivery {
+  display: none;
+}

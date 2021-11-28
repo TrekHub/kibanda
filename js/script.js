@@ -54,54 +54,109 @@ let cart = [];
 
 // UI LOGIC
 
-$(document).ready(function () {
-    appendPizzasToMenu(availablePizzas)
-    let counter = 0
+
+appendPizzasToMenu(availablePizzas)
+let counter = 0
 
 
-    $("#btn-click").on("click", function (e) {
-        e.preventDefault()
+$("#btn-click").on("click", function (e) {
+    e.preventDefault()
 
-        number = $("#number").val()
-        size = $("#size").val()
-        crust = $("#crust").val()
-        topping = $("#topping").val()
+    number = $("#number").val()
+    size = $("#size").val()
+    crust = $("#crust").val()
+    topping = $("#topping").val()
 
-        checkCrust()
-        checkSize()
-        checkTopping()
+    checkCrust()
+    checkSize()
+    checkTopping()
 
 
-        single.price = (sizePrice + crustPrice + toppingPrice) * parseInt(number);
-        if (number, size, crust, topping) {
+    single.price = (sizePrice + crustPrice + toppingPrice) * parseInt(number);
+    if (number, size, crust, topping) {
 
-            cart.push({
-                ...single,
-                number,
-                size,
-                crust,
-                topping
+        cart.push({
+            ...single,
+            number,
+            size,
+            crust,
+            topping
 
-            });
+        });
 
-            addToCart(cart)
-        }
-
-        const finalTotal = cart.reduce((n, {
-            price
-        }) => n + price, 0);
-        $(".totalPrice").text(`Ksh ${finalTotal}`)
-
-        // Clear Fields
-
-        $("#size").val('')
-        $("#crust").val('')
-        $("#topping").val('')
-    })
-});
+        addToCart(cart)
+    }
 
 
 
+getDeliveryPrice()
+
+
+
+   
+
+    // $("#btn-checkout").click(function() {
+    //     if ($("#deliveryYes").prop(
+    //       ":checked")) {
+    //         // alert("Check box in Checked");
+    //         $('#cartModal').hide()
+    //         $('#addToCartModal').show()
+    //     } else {
+    //         alert("Check box is Unchecked");
+    //     }
+    // });
+
+    // Clear Fields
+
+    $("#size").val('')
+    $("#crust").val('')
+    $("#topping").val('')
+})
+
+
+//Close the Delivery Section
+
+$("#btn-delivery").on("click", function () {
+    getDeliveryPrice()
+    $(".delivery").hide()
+
+})
+
+
+//Close the Checkout Modal
+
+$("#btn-checkout").click(function () {
+
+})
+
+// Toggle between the delivery section
+$("#deliveryYes").click(function () {
+    $(".delivery").toggle()
+
+})
+
+//Get the delivery Price
+
+function getDeliveryPrice() {
+
+    if ($("#deliveryYes").is(':checked')) {
+        const name = $("#name").val()
+        const location = $("#location").val()
+        const phone = $("#phone").val()
+        deliveryPrice = 300
+
+        alert("You pizza will be delivered")
+    } else {
+         deliveryPrice = 0
+    }
+
+    const finalTotal = cart.reduce((n, {
+        price
+    }) => n + price, 0) + deliveryPrice;
+    $(".totalPrice").text(`Ksh ${finalTotal}`)
+
+
+}
 // Check for size
 
 function checkSize() {
