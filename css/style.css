@@ -219,3 +219,20 @@ body {
     margin-left: 30px;
   }
 }
+.counter {
+  position: relative;
+
+}
+#count {
+  position: absolute;
+  top: -14px;
+  left: 14px;
+  border-radius: 50%;
+  height: 20px;
+  padding-left: 5px;
+  font-size: 14px;
+  font-weight: bolder;
+  width: 20px;
+  color: white;
+  background-color: #5eb172;
+}

@@ -15,17 +15,18 @@ function Pizza(id, name, size, image, price, crust, topping) {
 
 //Prototype for determining SIze
 Pizza.prototype.setSize = function () {
-
+    checkSize()
 };
 
 //Prototype for determining Crust
 Pizza.prototype.setCrust = function () {
+    checkCrust()
 
 };
 
 //Prototype for determining Toppings
 Pizza.prototype.SetToppings = function () {
-
+    checkTopping()
 }
 
 //Prototype for determining Price
@@ -46,10 +47,16 @@ const availablePizzas = [
 let cart = [];
 
 
+
+
+
+
+
 // UI LOGIC
+
 $(document).ready(function () {
     appendPizzasToMenu(availablePizzas)
-
+    let counter = 0
 
 
     $("#btn-click").on("click", function (e) {
@@ -64,8 +71,10 @@ $(document).ready(function () {
         checkSize()
         checkTopping()
 
+
         single.price = (sizePrice + crustPrice + toppingPrice) * parseInt(number);
         if (number, size, crust, topping) {
+
             cart.push({
                 ...single,
                 number,
@@ -76,10 +85,6 @@ $(document).ready(function () {
             });
 
             addToCart(cart)
-            // console.log(cart);
-
-
-
         }
 
         const finalTotal = cart.reduce((n, {
@@ -93,13 +98,11 @@ $(document).ready(function () {
         $("#crust").val('')
         $("#topping").val('')
     })
-
-
-
-
 });
 
 
+
+// Check for size
 
 function checkSize() {
     if (size === 'large') {
@@ -110,9 +113,10 @@ function checkSize() {
         sizePrice = 500
     }
 
-    console.log(sizePrice);
 
 }
+
+// Check for Crust
 
 function checkCrust() {
     if (crust === 'crispy') {
@@ -123,10 +127,10 @@ function checkCrust() {
     } else {
         crustPrice = 150
     }
-    console.log(crustPrice);
 
 }
 
+// Check for Topping
 
 function checkTopping() {
     if (topping === 'garlic') {
@@ -137,12 +141,7 @@ function checkTopping() {
         toppingPrice = 50
     }
 
-    console.log(toppingPrice);
 }
-
-
-
-
 
 
 
@@ -158,9 +157,6 @@ function appendPizzasToMenu(availablePizzas) {
 
 
 }
-
-
-
 
 //creating a pizza object UI
 function createPizza(pizza) {
@@ -196,26 +192,22 @@ function createPizza(pizza) {
 // get the unique clicked pizza
 function getSelectedPizza(id) {
     single = availablePizzas.find((pizza) => pizza.id === id);
-
-
     single.price = 0
     console.log(single);
 
 }
 
 
-
+//Add to cart Function
 function addToCart(cart) {
     const tableRow = $("#table-row");
     tableRow.html("")
     cart.forEach((x) => {
         tableRow.append(addItem(x))
-
-
     })
 }
 
-
+//create cart item
 function addItem(x) {
     return `
     <tr>

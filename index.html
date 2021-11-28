@@ -44,8 +44,13 @@
                         </li>
                     </ul>
                     <form class="d-flex align-items-center">
-                        <img height="20" src="./images/icons/cart-shopping-solid.svg" id="cart-icon" alt=""
-                            data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <div class="counter">
+                            <img height="20" src="./images/icons/cart-shopping-solid.svg" id="cart-icon" alt=""
+                                data-bs-toggle="modal" data-bs-target="#cartModal">
+                                <div id="count">0</div>
+
+                        </div>
+
                         <button class="btn-order " type="submit">Order</button>
                     </form>
                 </div>
@@ -286,41 +291,42 @@
                         </div>
                         <div class="col-8 mt-4">
 
-                           <form action="" id="orderForm">
-                            <div class="mx-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Number</label>
-                                <input type="number" class="form-control w-25" id="number" value="1" placeholder="">
-                            </div>
-                            <div class="mx-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Size</label>
-                                <select class="form-select" aria-label="Default select example" id="size">
-                                    <option selected>Select Your Size</option>
-                                    <option value="large">Large</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="small">Small</option>
-                                </select>
-                            </div>
-                            <div class="mx-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Crust</label>
-                                <select class="form-select" aria-label="Default select example" id="crust">
-                                    <option selected>Select Your Crust</option>
-                                    <option value="crispy">Crispy</option>
-                                    <option value="stuffed">Stuffed</option>
-                                    <option value="gluten">Gluten-Free</option>
-                                </select>
-                            </div>
-                            <div class="mx-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Toppings</label>
-                                <select class="form-select" aria-label="Default select example" id="topping">
-                                    <option selected>Select Your Toppings</option>
-                                    <option value="garlic">Garlic</option>
-                                    <option value="mushroom">Mushroom</option>
-                                    <option value="onion">Onion</option>
-                                </select>
-                            </div>
+                            <form action="" id="orderForm">
+                                <div class="mx-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-bold">Number</label>
+                                    <input type="number" class="form-control w-25" id="number" value="1" placeholder="">
+                                </div>
+                                <div class="mx-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-bold">Size</label>
+                                    <select class="form-select" aria-label="Default select example" id="size">
+                                        <option selected>Select Your Size</option>
+                                        <option value="large">Large</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="small">Small</option>
+                                    </select>
+                                </div>
+                                <div class="mx-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-bold">Crust</label>
+                                    <select class="form-select" aria-label="Default select example" id="crust">
+                                        <option selected>Select Your Crust</option>
+                                        <option value="crispy">Crispy</option>
+                                        <option value="stuffed">Stuffed</option>
+                                        <option value="gluten">Gluten-Free</option>
+                                    </select>
+                                </div>
+                                <div class="mx-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-bold">Toppings</label>
+                                    <select class="form-select" aria-label="Default select example" id="topping">
+                                        <option selected>Select Your Toppings</option>
+                                        <option value="garlic">Garlic</option>
+                                        <option value="mushroom">Mushroom</option>
+                                        <option value="onion">Onion</option>
+                                    </select>
+                                </div>
 
-                            <button type="submit" id="btn-click" class="btn btn-success fw-bold" data-bs-dismiss="modal">Add To Cart</button>
-                           </form>
+                                <button type="submit" id="btn-click" class="btn btn-success fw-bold"
+                                    data-bs-dismiss="modal">Add To Cart</button>
+                            </form>
                         </div>
 
                     </div>
@@ -329,7 +335,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    
+
                 </div>
             </div>
         </div>
@@ -365,7 +371,7 @@
                             </tr>
                         </thead>
                         <tbody id="table-row">
-                           
+
 
                         </tbody>
                     </table>
