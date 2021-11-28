@@ -205,7 +205,7 @@
                             </div>
                             <div class="card-price mx-3" id="price">
                                 <h4 id="featured-price" class="fw-bold text-success">Ksh 1000</h4>
-                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="" data-bs-toggle="modal" data-bs-target="#addToCartModal">
 
 
                             </div>
@@ -230,7 +230,7 @@
                             </div>
                             <div class="card-price mx-3" id="price">
                                 <h4 id="featured-price" class="fw-bold text-success">Ksh 1000</h4>
-                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="">
+                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="" data-bs-toggle="modal" data-bs-target="#addToCartModal">
 
                             </div>
                         </div>
@@ -253,7 +253,7 @@
                             </div>
                             <div class="card-price mx-3" id="price">
                                 <h4 id="featured-price" class="fw-bold text-success">Ksh 1000</h4>
-                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="" >
+                                <img height="20" src="./images/icons/cart.svg" id="cart-icon" alt="" data-bs-toggle="modal" data-bs-target="#addToCartModal" >
 
                             </div>
                         </div>
@@ -337,7 +337,7 @@
 
 <!-- MODAL -->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -345,11 +345,37 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+
+            <div class="mx-3">
+                <label for="exampleFormControlInput1" class="form-label">Size</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Your Size</option>
+                    <option value="1">Large</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                  </select>
+            </div>
+            <div class="mx-3">
+                <label for="exampleFormControlInput1" class="form-label">Crust</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Your Crust</option>
+                    <option value="1">Crispy</option>
+                    <option value="2">Stuffed</option>
+                    <option value="3">Gluten-Free</option>
+                  </select>
+            </div>  <div class="mx-3">
+                <label for="exampleFormControlInput1" class="form-label">Toppings</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Your Toppings</option>
+                    <option value="1">Large</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                  </select>
+            </div>
+            
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success">Add To Cart</button>
+          <button type="button" class="btn btn-success fw-bold">Add To Cart</button>
         </div>
       </div>
     </div>
