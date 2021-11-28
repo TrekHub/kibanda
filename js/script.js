@@ -52,13 +52,19 @@ $(document).ready(function () {
 
 
 
-    $("#btn-click").on("click", function () {
-        const number = $("#number").val()
-        const size = $("#size").val()
-        const crust = $("#crust").val()
-        const topping = $("#topping").val()
+    $("#btn-click").on("click", function (e) {
+        e.preventDefault()
+        
+        number = $("#number").val()
+        size = $("#size").val()
+        crust = $("#crust").val()
+        topping = $("#topping").val()
 
+        checkCrust()
+        checkSize()
+        checkTopping()
 
+        single.price = (sizePrice + crustPrice + toppingPrice) * parseInt(number);
         if (number, size, crust, topping) {
             cart.push({
                 ...single,
@@ -80,11 +86,52 @@ $(document).ready(function () {
         $("#crust").val('')
         $("#topping").val('')
     })
+
+
+
+
 });
 
 
 
+function checkSize() {
+    if (size === 'large') {
+        sizePrice = 1100
+    } else if (size === 'medium') {
+        sizePrice = 900
+    } else {
+        sizePrice = 500
+    }
 
+    console.log(sizePrice);
+
+}
+
+function checkCrust() {
+    if (crust === 'crispy') {
+        crustPrice = 300
+    } else if (crust === 'stuffed') {
+
+        crustPrice = 200
+    } else {
+        crustPrice = 150
+    }
+    console.log(crustPrice);
+
+}
+
+
+function checkTopping() {
+    if (topping === 'garlic') {
+        toppingPrice = 150
+    } else if (topping === 'mushroom') {
+        toppingPrice = 100
+    } else {
+        toppingPrice = 50
+    }
+
+    console.log(toppingPrice);
+}
 
 
 
@@ -143,6 +190,8 @@ function createPizza(pizza) {
 function getSelectedPizza(id) {
     single = availablePizzas.find((pizza) => pizza.id === id);
 
+
+    single.price = 0
     console.log(single);
 
 }
