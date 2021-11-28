@@ -87,24 +87,7 @@ $("#btn-click").on("click", function (e) {
         addToCart(cart)
     }
 
-
-
 getDeliveryPrice()
-
-
-
-   
-
-    // $("#btn-checkout").click(function() {
-    //     if ($("#deliveryYes").prop(
-    //       ":checked")) {
-    //         // alert("Check box in Checked");
-    //         $('#cartModal').hide()
-    //         $('#addToCartModal').show()
-    //     } else {
-    //         alert("Check box is Unchecked");
-    //     }
-    // });
 
     // Clear Fields
 
@@ -126,6 +109,7 @@ $("#btn-delivery").on("click", function () {
 //Close the Checkout Modal
 
 $("#btn-checkout").click(function () {
+    
 
 })
 
@@ -256,9 +240,16 @@ function getSelectedPizza(id) {
 //Add to cart Function
 function addToCart(cart) {
     const tableRow = $("#table-row");
+    const tableRow2 = $("#table-row2");
+
+
     tableRow.html("")
     cart.forEach((x) => {
         tableRow.append(addItem(x))
+    })
+    tableRow2.html("")
+    cart.forEach((x) => {
+        tableRow2.append(addItem(x))
     })
 }
 
