@@ -20,7 +20,7 @@ body {
   margin-right: 30px;
 }
 .btn-order {
-  width: 130px;
+  width:130px;
   height: 40px;
   margin-left: 10px;
 
@@ -32,6 +32,10 @@ body {
   border: none;
   padding: 5px 10px;
   outline: none;
+}
+.order {
+  width: 230px;
+
 }
 .btn-order:hover {
   background-color: transparent;

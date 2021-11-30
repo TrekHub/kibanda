@@ -44,14 +44,9 @@ const availablePizzas = [
 
 
 
+
+
 let cart = [];
-
-
-
-
-
-
-
 // UI LOGIC
 
 
@@ -124,9 +119,9 @@ $("#deliveryYes").click(function () {
 function getDeliveryPrice() {
 
     if ($("#deliveryYes").is(':checked')) {
-        const name = $("#name").val()
-        const location = $("#location").val()
-        const phone = $("#phone").val()
+          name = $("#name").val()
+         location = $("#location").val()
+         phone = $("#phone").val()
         deliveryPrice = 300
 
         alert("You pizza will be delivered")
