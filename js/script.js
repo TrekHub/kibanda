@@ -82,7 +82,7 @@ $("#btn-click").on("click", function (e) {
         addToCart(cart)
     }
 
-getDeliveryPrice()
+    getDeliveryPrice()
 
     // Clear Fields
 
@@ -94,9 +94,11 @@ getDeliveryPrice()
 
 //Close the Delivery Section
 
-$("#btn-delivery").on("click", function () {
-    getDeliveryPrice()
+$("#btn-delivery").on("click", function (e) {
+    e.preventDefault()
+
     $(".delivery").hide()
+    getDeliveryPrice()
 
 })
 
@@ -104,7 +106,7 @@ $("#btn-delivery").on("click", function () {
 //Close the Checkout Modal
 
 $("#btn-checkout").click(function () {
-    
+
 
 })
 
@@ -117,16 +119,15 @@ $("#deliveryYes").click(function () {
 //Get the delivery Price
 
 function getDeliveryPrice() {
+    
 
     if ($("#deliveryYes").is(':checked')) {
-          name = $("#name").val()
-         location = $("#location").val()
-         phone = $("#phone").val()
+        fullName = $("#fullNname").val()
+        userLoc = $("#userLoc").val()
+        phone = $("#phone").val()
         deliveryPrice = 300
-
-        alert("You pizza will be delivered")
     } else {
-         deliveryPrice = 0
+        deliveryPrice = 0
     }
 
     const finalTotal = cart.reduce((n, {

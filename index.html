@@ -76,7 +76,7 @@
                 </p>
                 <div>
                     <a href="#menu-section"><button class="btn-order order  " type="button">Order</button></a>
-                   
+
 
                 </div>
             </div>
@@ -387,20 +387,23 @@
 
 
                         <div class="delivery">
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Location</label>
-                                <input type="text" class="form-control" id="location">
-                            </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                                <input type="text" class="form-control" id="phone">
-                            </div>
-                            <button type="button" id="btn-delivery" class="btn btn-success fw-bold">Done</button>
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="userLoc">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" id="phone">
+                                </div>
+                                <button type="button" id="btn-delivery" class="btn btn-success fw-bold">Done</button>
+                            </form>
 
                         </div>
 
@@ -417,7 +420,8 @@
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal"  class="btn btn-success fw-bold" id="btn-checkout">View Orders</button>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal"
+                        class="btn btn-success fw-bold" id="btn-checkout">View Orders</button>
                 </div>
             </div>
         </div>
@@ -426,59 +430,60 @@
 
 
 
-  <!-- Last Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-            <div class="d-flex align-items-center justify-content-center ">
-                <img height="20" class="mx-1" id="logo-img" src="./images/icons/shop-solid.svg" alt="">
-                <a class="navbar-brand fs-2 fw-bold" id="logo" href="#">Kibanda</a>
+    <!-- Last Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex align-items-center justify-content-center ">
+                        <img height="20" class="mx-1" id="logo-img" src="./images/icons/shop-solid.svg" alt="">
+                        <a class="navbar-brand fs-2 fw-bold" id="logo" href="#">Kibanda</a>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <div class="my-3 details">
+
+
+
+                    </div>
+                    <table class="table  table-striped table-hover table-bordered">
+                        <thead>
+                            <tr class="text-success">
+                                <th scope="col">#</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Crust</th>
+                                <th scope="col">Topping</th>
+                                <th scope="col">Price</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="table-row2">
+
+
+                        </tbody>
+                    </table>
+
+                    <div class="d-flex my-3 justify-content-end mx-5">
+                        <h5 id="featured-price" class="mx-3  ">Delivery</h5>
+                        <h5 id="featured-price" class="fw-bold text-success deliveryPrice">Ksh 0</h5>
+                    </div>
+
+                    <div class="d-flex my-3 justify-content-end mx-5">
+                        <h5 id="featured-price" class="mx-3  ">Total Price</h5>
+                        <h5 id="featured-price" class="fw-bold text-success totalPrice">Ksh 0</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-success fw-bold"
+                        id="btn-reciept">Checkout</button>
+                </div>
             </div>
-        
         </div>
-        <div class="modal-body">
-            <div class="my-3 details">
-
-               
-
-            </div>
-            <table class="table  table-striped table-hover table-bordered">
-                <thead>
-                    <tr class="text-success">
-                        <th scope="col">#</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">No</th>
-                        <th scope="col">Size</th>
-                        <th scope="col">Crust</th>
-                        <th scope="col">Topping</th>
-                        <th scope="col">Price</th>
-
-
-                    </tr>
-                </thead>
-                <tbody id="table-row2">
-
-
-                </tbody>
-            </table>
-
-            <div class="d-flex my-3 justify-content-end mx-5">
-                <h5 id="featured-price" class="mx-3  ">Delivery</h5>
-                <h5 id="featured-price" class="fw-bold text-success deliveryPrice">Ksh 0</h5>
-            </div>
-
-            <div class="d-flex my-3 justify-content-end mx-5">
-                <h5 id="featured-price" class="mx-3  ">Total Price</h5>
-                <h5 id="featured-price" class="fw-bold text-success totalPrice">Ksh 0</h5>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-bs-dismiss="modal" class="btn btn-success fw-bold" id="btn-reciept">Checkout</button>
-        </div>
-      </div>
     </div>
-  </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
