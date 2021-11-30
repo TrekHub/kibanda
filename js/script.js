@@ -52,6 +52,8 @@ let cart = [];
 
 appendPizzasToMenu(availablePizzas)
 let counter = 0
+$('.alert').hide()
+
 
 
 $("#btn-click").on("click", function (e) {
@@ -81,7 +83,11 @@ $("#btn-click").on("click", function (e) {
 
         addToCart(cart)
         $("#count").text(`${counter}`)
+        successAlert("Pizza Added to Cart Successfully &#x1F60A;")
+        $(window).scrollTop(0);
+       
     }
+    
 
     getDeliveryPrice()
 
@@ -111,6 +117,10 @@ $("#btn-checkout").click(function () {
 
 })
 
+$("#btn-reciept").click(function(){
+    successAlert("You have Successfully Checked Out &#x1F60A;")
+})
+
 // Toggle between the delivery section
 $("#deliveryYes").click(function () {
     $(".delivery").toggle()
@@ -120,7 +130,7 @@ $("#deliveryYes").click(function () {
 //Get the delivery Price
 
 function getDeliveryPrice() {
-    
+
 
     if ($("#deliveryYes").is(':checked')) {
         fullName = $("#fullNname").val()
@@ -234,6 +244,14 @@ function getSelectedPizza(id) {
 
 }
 
+function successAlert(msg) {
+$("#alerts").append(`
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  ${msg}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`)
+}
 
 //Add to cart Function
 
@@ -242,7 +260,7 @@ function addToCart(cart) {
     const tableRow = $("#table-row");
     const tableRow2 = $("#table-row2");
 
-    counter ++;
+    counter++;
 
 
     tableRow.html("")
