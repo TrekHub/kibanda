@@ -80,6 +80,7 @@ $("#btn-click").on("click", function (e) {
         });
 
         addToCart(cart)
+        $("#count").text(`${counter}`)
     }
 
     getDeliveryPrice()
@@ -134,6 +135,7 @@ function getDeliveryPrice() {
         price
     }) => n + price, 0) + deliveryPrice;
     $(".totalPrice").text(`Ksh ${finalTotal}`)
+    $(".deliveryPrice").text(`Ksh ${deliveryPrice}`)
 
 
 }
@@ -234,9 +236,13 @@ function getSelectedPizza(id) {
 
 
 //Add to cart Function
+
+
 function addToCart(cart) {
     const tableRow = $("#table-row");
     const tableRow2 = $("#table-row2");
+
+    counter ++;
 
 
     tableRow.html("")
